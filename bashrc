@@ -81,7 +81,28 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
+# hadoop alias
+alias hls='hadoop fs -ls'
+alias hlsr='hadoop fs -lsr'
+alias hcp='hadoop fs -cp '
+alias hmv='hadoop fs -mv'
+alias hget='hadoop fs -get'
+alias hput='hadoop fs -put'
+alias hrm='hadoop fs -rm'
+alias hmkdir='hadoop fs -mkdir'
+alias hcat='hadoop fs -cat'
+alias hrmr='hadoop fs -rmr'
+alias hstat='hadoop fs -stat'
+alias htest='hadoop fs -test'
+alias htext='hadoop fs -text'
+alias htouchz='hadoop fs -touchz'
+alias hdu='hadoop fs -du'
+alias hdus='hadoop fs -dus'
+alias hchmod='hadoop fs -chmod'
+alias hchgrp='hadoop fs -chgrp'
+alias hchown='hadoop fs -chown'
+alias htail='hadoop fs -tail'
+alias hjar='hadoop jar'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
