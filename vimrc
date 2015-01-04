@@ -188,19 +188,4 @@ let i=i+1
 endwhile
 return [0,0]  "空串处理
 endfunction
-"自动补全括号
-:inoremap ( ()<esc>i
-:inoremap ) <c-r>=ClosePair(')')<cr>
-:inoremap { {<cr>}<esc>O
-:inoremap } <c-r>=ClosePair('}')<cr>
-:inoremap [ []<esc>i
-:inoremap ] <c-r>=ClosePair(']')<cr>
-:inoremap " ""<esc>i
-:inoremap ' ''<esc>i
-function! ClosePair(char)
-if getline('.')[col('.') - 1] == a:char
-return "\<right>"
-else
-return a:char
-endif
-endfunction
+
