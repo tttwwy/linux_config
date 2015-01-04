@@ -53,9 +53,6 @@ imap <C-z> <Esc>:Setcomment<CR>
 vmap <C-z> <Esc>:SetcommentV<CR>
 map <F5> :call CompileRun()<CR>
 map <C-F5> :call Debug()<CR>
-map <C-F12> :w<CR>:!sudo ~/oslab/mount-hdc<CR>
-map <F12> :w!<CR>:!cd ~/oslab/linux-0.11/ && make clean && make<CR>:!~/oslab/run<CR>
-let g:miniBufExplMapWindowNavVim = 1  "用<C-h,j,k,l>切换到上下左右的窗口中去
 "set AutoComand New file title
 autocmd BufNewFile *.c,*.sh,*.cpp,*.java exec ":call SetTitle()"
 "set cursor to the end of the file
