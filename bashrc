@@ -81,7 +81,28 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-unalias rm
+# hadoop alias
+alias hls='hadoop fs -ls'
+alias hlsr='hadoop fs -lsr'
+alias hcp='hadoop fs -cp '
+alias hmv='hadoop fs -mv'
+alias hget='hadoop fs -get'
+alias hput='hadoop fs -put'
+alias hrm='hadoop fs -rm'
+alias hmkdir='hadoop fs -mkdir'
+alias hcat='hadoop fs -cat'
+alias hrmr='hadoop fs -rmr'
+alias hstat='hadoop fs -stat'
+alias htest='hadoop fs -test'
+alias htext='hadoop fs -text'
+alias htouchz='hadoop fs -touchz'
+alias hdu='hadoop fs -du'
+alias hdus='hadoop fs -dus'
+alias hchmod='hadoop fs -chmod'
+alias hchgrp='hadoop fs -chgrp'
+alias hchown='hadoop fs -chown'
+alias htail='hadoop fs -tail'
+alias hjar='hadoop jar'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -100,3 +121,23 @@ fi
 #fi
 
 export TERM=xterm-256color
+function extract () { 
+if [ -f $1 ] ; then 
+case $1 in 
+*.tar.bz2) tar xjf $1 ;; 
+*.tar.gz) tar xzf $1 ;; 
+*.bz2) bunzip2 $1 ;; 
+*.rar) unrar e $1 ;; 
+*.gz) gunzip $1 ;; 
+*.tar) tar xf $1 ;; 
+*.tbz2) tar xjf $1 ;; 
+*.tgz) tar xzf $1 ;; 
+*.zip) unzip $1 ;; 
+*.Z) uncompress $1 ;; 
+*.7z) 7z x $1 ;; 
+*) echo "'$1' cannot be extracted via extract()" ;; 
+esac 
+else 
+echo "'$1' is not a valid file" 
+fi 
+}
