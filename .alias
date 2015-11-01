@@ -1,0 +1,72 @@
+#export TERM="xterm-256color"
+export LANG=en_US.utf8
+export LC_ALL=en_US.utf8
+
+alias vdir='vdir --color=auto'
+alias dir='dir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias ls='ls --color=auto'
+alias ll='ls -alhF'
+alias l='ls -lhF'
+alias la='ls -A'
+#alias l='ls -CF'
+alias vi="vim"
+alias tmux='TERM="screen-256color" && tmux -u2 attach-session -d|| tmux -u2'
+alias top='old=$TERM&&TERM="xterm-256color"&&top&&TERM=$old'
+alias screen='old=$TERM&&TERM="xterm-256color"&&screen&&TERM=$old'
+
+# hadoop alias
+alias hls='hadoop fs -ls'
+alias hlsr='hadoop fs -lsr'
+alias hcp='hadoop fs -cp '
+alias hmv='hadoop fs -mv'
+alias hget='hadoop fs -get'
+alias hput='hadoop fs -put'
+alias hrm='hadoop fs -rm'
+alias hmkdir='hadoop fs -mkdir'
+alias hcat='hadoop fs -cat'
+alias hrmr='hadoop fs -rmr'
+alias hstat='hadoop fs -stat'
+alias htest='hadoop fs -test'
+alias htext='hadoop fs -text'
+alias htouchz='hadoop fs -touchz'
+alias hdu='hadoop fs -du'
+alias hdus='hadoop fs -dus'
+alias hchmod='hadoop fs -chmod'
+alias hchgrp='hadoop fs -chgrp'
+alias hchown='hadoop fs -chown'
+alias htail='hadoop fs -tail'
+alias hjar='hadoop jar'
+function fullpwd(){
+echo $USER@$HOST:`pwd`
+}
+function down() {                                                      
+wget ftp://cp01-rdqa-dev427.cp01.baidu.com:/home/users/wangzhe04/pan/$*
+}   
+
+function upload() {                                                      
+scp $* wangzhe04@cp01-rdqa-dev427.cp01.baidu.com:/home/users/wangzhe04/pan
+}   
+
+function extract () { 
+if [ -f $1 ] ; then 
+case $1 in 
+*.tar.bz2) tar xjf $1 ;; 
+*.tar.gz) tar xzf $1 ;; 
+*.bz2) bunzip2 $1 ;; 
+*.rar) unrar e $1 ;; 
+*.gz) gunzip $1 ;; 
+*.tar) tar xf $1 ;; 
+*.tbz2) tar xjf $1 ;; 
+*.tgz) tar xzf $1 ;; 
+*.zip) unzip $1 ;; 
+*.Z) uncompress $1 ;; 
+*.7z) 7z x $1 ;; 
+*) echo "'$1' cannot be extracted via extract()" ;; 
+esac 
+else 
+echo "'$1' is not a valid file" 
+fi 
+}
