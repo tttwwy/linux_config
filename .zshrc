@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
+test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
 
 
@@ -9,7 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.#zSH_THEME="robbyrussell"
 #ZSH_THEME="agnoster"
-ZSH_THEME="my"
+#ZSH_THEME="my "
 #ZSH_THEME="random"
 
 #ZSH_THEME="powerline"
@@ -55,7 +56,7 @@ export TIME_STYLE='+%Y-%m-%d %H:%M:%S'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(svn autojump)
+plugins=(svn autojump wd)
 
 # User configuration
 
@@ -88,6 +89,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 autoload -U compinit && compinit
+PROMPT='%k%f%F{234}%K{32} %~%k%f%F{32}⮀%f
+%{$fg[white]%}➜ %{$reset_color%}'
 #PROMPT='%{$fg[blue]%}%~ %{$fg[white]%}$ %{$reset_color%}'
 #PROMPT='${ret_status}%{$fg[white]%}%D{%m-%d} %T %{$fg[blue]%}%~ %{$reset_color%}'
 #PROMPT='${ret_status}%f%K{255} %F{240}%D{%Y-%m-%d}%f%k%K{240}%F{255}⮀%f%k%K{240}%F{255} %D{%H:%M:%S} %f%k%K{32}%F{240}⮀%k%f%F{234}%K{32} %~%k%f%F{32}⮀%f

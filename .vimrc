@@ -35,9 +35,35 @@ set sw=4
 set encoding=utf-8
 set fenc=utf-8
 set fileencodings=utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-
+"let g:fencview_autodetect=1 " 使用fencview进行编码识别
+"let g:fencview_auto_patterns='*' " 使用fencview进行编码识别
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4     " python文件，插入tab自动转空格
+autocmd Filetype python %ret!     " python文件，当前文件已有tab自动转空格
 "设置打开一个文件时候，猜测的文件编码列表 按照顺序来猜测
 filetype plugin on
 filetype plugin indent on    " 启用自动补全
 filetype indent on           " 针对不同的文件类型采用不同的缩进格式
+let mapleader=','
+map <C-\> <plug>NERDCommenterToggle
+nmap <C-\> <plug>NERDCommenterToggle<ESC>j
+imap <C-\> <ESC><plug>NERDCommenterToggle<ESC>j<ESC>i
+set pastetoggle=<F9>
+autocmd! BufNewFile * call LoadTemplate()
+fun LoadTemplate()
+    "获取扩展名或者类型名
+    let ext = expand ("%:e")
+    let tpl = expand("~/.vim/tpl/".ext.".tpl")
+    if !filereadable(tpl)
+        echohl WarningMsg | echo "No template [".tpl."] for .".ext | echohl None
+        return
+    endif
 
+    "读取模板内容
+    silent execute "0r ".tpl
+    "指定光标位置
+    silent execute "normal G$"
+    silent call search("#cursor#", "w")
+    silent execute "normal 8x"
+    "进入插入模式
+    startinsert
+endfun
