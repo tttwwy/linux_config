@@ -34,6 +34,7 @@ set cin
 set sw=4
 set encoding=utf-8
 set fenc=utf-8
+set fileencoding=utf-8
 set fileencodings=utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 "let g:fencview_autodetect=1 " 使用fencview进行编码识别
 "let g:fencview_auto_patterns='*' " 使用fencview进行编码识别
