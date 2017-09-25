@@ -2,7 +2,8 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
 
 
 # Set name of the theme to load.
