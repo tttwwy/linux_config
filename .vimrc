@@ -1,4 +1,5 @@
 let g:solarized_termcolors=256
+set clipboard=unnamed
 execute pathogen#infect()
 set laststatus=2
 set showcmd
