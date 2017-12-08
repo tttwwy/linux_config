@@ -128,4 +128,5 @@ bindkey "^L" forward-word
 bindkey "^H" backward-word
 bindkey "^K" clear-screen
 autoload -U select-word-style
-select-word-style shell
+WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
+select-word-style normal
